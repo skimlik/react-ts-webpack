@@ -1,1 +1,1 @@
-React + WebPack boilerplate
+React + Redux + WebPack boilerplate
