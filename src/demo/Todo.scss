@@ -1,0 +1,14 @@
+.todo-item {
+    cursor: pointer;
+    .todo-name {
+        font-family: Calibri, sans-serif;
+        font-weight: 600;
+        font-size: 12pt;
+    }
+    .todo-expires {
+        font-family: Calibri, sans-serif;
+        font-weight: 300;
+        font-size: 9pt;
+        color: gray;
+    }
+}

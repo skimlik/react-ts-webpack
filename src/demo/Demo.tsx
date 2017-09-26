@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { IState } from './code/state';
+import { IState } from '../code/state';
 import { AnyAction, Store } from 'redux';
-import { DemoActions } from './code/demo-actions';
+import { DemoActions } from './demo-actions';
+import { TodoList } from './TodoList';
 
 export interface IDemoPropTypes {
     logo: string;
@@ -15,9 +16,9 @@ export class Demo extends React.Component<IDemoPropTypes, IState> {
 
     private store: Store<IState>;
 
-    constructor(props: IDemoPropTypes, public context: any) {
+    constructor(props: IDemoPropTypes, context: any) {
         super(props, context);
-        this.store = this.context.store;
+        this.store = context.store;
         this.state = this.getStateFromStore(DemoActions.GET_WELCOME_MSG);
     }
 
@@ -29,9 +30,8 @@ export class Demo extends React.Component<IDemoPropTypes, IState> {
                         <img src={this.props.logo} className="app-logo" alt="logo"/>
                         <h2>{this.state.demo.msg}</h2>
                     </div>
-                    <p className="app-intro">
-                        To get started, edit <code>App.tsx</code> and save to reload.
-                    </p>
+                    <h4>To-do list</h4>
+                    <TodoList />
                 </div>
             </div>
         );
